@@ -30,14 +30,13 @@ jobs:
         run: npm run build
 
       - name: Docker build (local tag for CI test)
-        run: docker build -t react-app:ci .
+        run: docker build -t react-app:latest .
 
       - name: Run docker container (demo)
         run: |
-          docker run -d --name react-app -p 8080:80 react-app:ci
-          sleep 3
+          docker run -d --name react-app -p 8080:80 react-app:latest
+          sleep 5
           curl -I http://localhost:8080
-          docker logs react-app --tail 50
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
