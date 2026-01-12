@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1 data-testid="app-title">React CI/CD Demo App</h1>
+      <h1 data-testid="app-title">React CI/CD Demo Application</h1>
 
       <p>This is a simple React page.</p>
 
