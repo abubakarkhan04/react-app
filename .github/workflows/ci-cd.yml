@@ -29,10 +29,10 @@ jobs:
       - name: Build app
         run: npm run build
 
-      - name: Docker build (local tag for CI test)
+      - name: Docker build
         run: docker build -t react-app:latest .
 
-      - name: Run docker container (demo)
+      - name: Run docker container
         run: |
           docker run -d --name react-app -p 8080:80 react-app:latest
           sleep 5
